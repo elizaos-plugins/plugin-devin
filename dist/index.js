@@ -157,7 +157,7 @@ var devinProvider = {
           lastUpdate: Date.now()
         };
       }
-      const devinState = state?.devin || {};
+      const devinState = (state == null ? void 0 : state.devin) || {};
       if (devinState.sessionId) {
         try {
           const sessionDetails = await getSessionDetails(runtime, devinState.sessionId);
